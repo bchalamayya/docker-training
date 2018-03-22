@@ -1,4 +1,4 @@
-# Docker Training - Lab 1 - Docker CLI Basics
+# Docker Training - Lab 2 - Docker CLI Basics
 
 In the first lab, we got the Hello World container running on our machine. In this lab, we will further explore the basics of the Docker CLI.
 
@@ -246,6 +246,21 @@ docker stop sample-httpd
 
 Note that if you do not use the `-rm` flag on this container (such as in a situation where you need to be able to pull crash logs), you must remove the stopped container before creating a new one.  This is because for Docker, container names must be unique across all containers - both running and stopped.
 
+## 14 - Run Command - Environment Variables
+
+Let's see how to pass environment variables into Docker. Run this command:
+
+```
+docker run ubuntu env
+```
+
+To pass an environment variable in, use the -e switch
+
+```
+docker run -e a=1 -e b=2 ubuntu env
+```
+
+Note: If you want to pass multiple files, you can use an environment file via the `--env-file` switch, passing in the path to the file.
 
 ## Lab Complete
 
@@ -262,3 +277,4 @@ In this lab, we have learned how to:
 * Clean up stopped containers
 * Run containers that automatically clean up on exit
 * Run nameed containers
+* Pass environment vairables into a container

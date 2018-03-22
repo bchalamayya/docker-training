@@ -1,6 +1,6 @@
-# Docker Training - Lab 3 - Creating a Container
+# Docker Training - Lab 3 - Creating an Image
 
-This lab will walk through the process to setup a Dockerfile and build a container from scratch.
+This lab will walk through the process to setup a Dockerfile and build a image from scratch.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ docker build -t lab-3-httpd:empty .
 
 The first statement builds your docker container.  The `-t lab-3-httpd:empty` labels this as `lab-3-http` with the version tag of `empty`.  (Note that if you remove the version tag, Docker assumes `:latest`) 
 
-The `.` parameter supplies the build context to use, in this case the local folder.  You could also run `docker build -t lab-3-httpd c:\docker-labs\lab-3-https` to achieve the same effect.
+The `.` parameter supplies the build context to use, in this case the local folder.  You could also run `docker build -t lab-3-httpd c:\docker-labs\lab-3-httpd` to achieve the same effect.
 
 Try running this command a couple of times.  You should note that it continues to build a container with the same digest number.  That is because Docker, by default, does not rebuild image layers if rhere is a locally cached version that has the same build context.
 
@@ -169,7 +169,7 @@ Something to note that in both the `CMD` and `ENTRYPOINT` methods here immediate
 
 Up until this point, we have just copied files into a container. In this section of the lab, we will execute "install" steps.
 
-Create a folder called `c:\lab-3-python`.  Don't worry - you don't need to know Python for this lab.
+Create a folder called `c:\docker-labs\lab-3-python`.  Don't worry - you don't need to know Python for this lab.
 
 Create the following files:
 
